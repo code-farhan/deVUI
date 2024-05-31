@@ -1,0 +1,71 @@
+---
+import Button from "../components/Button.astro";
+
+interface Props{
+    // Empty for now
+}
+
+console.log(Astro.url.pathname)
+---
+
+<nav>
+    <img src="../../public/images/gdsc-logo.png" alt="GDSC Logo">
+    <div class="nav-links">
+        <a href="/" class={Astro.url.pathname.endsWith("/") ? "active" : ""}>Home</a>
+        <a href="/" class={Astro.url.pathname.endsWith("events") ? "active" : ""}>Events</a>
+        <a href="/" class={Astro.url.pathname.endsWith("projects") ? "active" : ""}>Projects</a>
+        <a href="/" class={Astro.url.pathname.endsWith("about-us") ? "active" : ""}>About Us</a> 
+    </div>
+    <div class="button">  
+        <Button text="Join Chapter" link="https://gdsc.community.dev/university-of-illinois-chicago/" variant="filled"/>
+    </div> 
+</nav>
+
+<script>
+    console.log(Astro.url.pathname)
+</script>
+
+<style>
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        height: 4rem;
+        background-color: transparent;
+        font-family: sans-serif
+    }
+    nav img{
+        width: 3.75rem;
+    }
+    .nav-links {
+        display: flex;
+        gap: 6%;
+        justify-content: flex-end;
+        width: 70%;
+        font-size: 1.03rem;
+    }
+    nav a{
+        box-sizing: border-box;
+        text-decoration: none;
+        color: #000;
+        font-weight: 700;
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+    nav a.active{
+        font-weight: 700;
+        color: var(--c-green);
+    }
+    nav a:hover{
+        text-decoration: underline;
+    }
+    .button{
+        all: unset;
+        width: 10rem;
+        font-size: 0.93rem;
+    }
+</style>

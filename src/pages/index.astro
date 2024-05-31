@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AboutCard from '../components/AboutCard.astro';
+import Button from '../components/Button.astro';
+import '../styles/global.css';
+import FrontPageHeader from '../components/FrontPageHeader.astro';
+import NavBar from '../components/NavBar.astro';
+---
+
+<Layout title="Welcome to Astro">
+	<NavBar />
+	<main>
+		<FrontPageHeader />
+
+		<p>blue buttons</p>
+		<p>
+			<Button text="Test Button" link="https://google.com" />
+		<Button text="Test Button" link="https://google.com" variant="outlined" />
+		<Button text="Test Button" link="https://google.com" variant="disabled" />
+		</p>
+		<p>red buttons</p>
+		<p>
+		<Button color="red" text="Test Button" link="https://google.com" />
+		<Button color="red" text="Test Button" link="https://google.com" variant="outlined" />
+		<Button color="red" text="Test Button" link="https://google.com" variant="disabled" />
+		</p>
+		
+		<p>// TODO customize this card a bit more</p>
+		<AboutCard name="Angel" email="me@you.net" title="GDSC Lead | President" />
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 900px;
+		max-width: calc(100% - 1rem);
+		font-size: 20px;
+		line-height: 1.6;
+	}
+</style>
